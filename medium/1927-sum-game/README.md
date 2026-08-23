@@ -62,28 +62,33 @@ Constraints:
 ## Solution
 
 **Language:** C++  
-**Runtime:** 0 ms  
-**Memory:** 7.8 MB  
-**Submitted:** 2026-08-23T13:30:59.106Z  
+**Runtime:** 2 ms (beats 71.33%)  
+**Memory:** 13.9 MB (beats 92.07%)  
+**Submitted:** 2026-08-23T13:31:05.179Z  
 
 ```cpp
-            if (num[i] == '?') cnt1++;
-            else sum1 += num[i] - '0';
-        }
-        for (int i = n / 2; i < n; i++) {
-            if (num[i] == '?') cnt2++;
-            else sum2 += num[i] - '0';
-        }
+class Solution {
+public:
+    bool sumGame(string num) {
+        int n = num.size();
+        int sum1 = 0, sum2 = 0, cnt1 = 0, cnt2 = 0;
 
-        int cnt = cnt1 + cnt2;
-        if (cnt % 2 == 1) return true; // odd number of '?', Alice always 
-        wins
+        for (int i = 0; i < n / 2; i++) {
+            if (num[i] == '?') cnt1++;
+            else sum1 += num[i] - '0';
+        }
+        for (int i = n / 2; i < n; i++) {
+            if (num[i] == '?') cnt2++;
+            else sum2 += num[i] - '0';
+        }
 
-        // even case: Bob can pair up moves and force each pair to sum to 9
-        return sum1 - sum2 != (cnt2 - cnt1) / 2 * 9;
-    }
+        int cnt = cnt1 + cnt2;
+        if (cnt % 2 == 1) return true; // odd number of '?', Alice always wins
+
+        // even case: Bob can pair up moves and force each pair to sum to 9
+        return sum1 - sum2 != (cnt2 - cnt1) / 2 * 9;
+    }
 };
-
 ```
 
 ---
