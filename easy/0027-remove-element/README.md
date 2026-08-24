@@ -62,27 +62,26 @@ Constraints:
 ## Solution
 
 **Language:** C++  
-**Runtime:** 0 ms  
-**Memory:** 8.2 MB  
-**Submitted:** 2026-08-24T16:55:31.218Z  
+**Runtime:** 0 ms (beats 100.00%)  
+**Memory:** 11.6 MB (beats 84.65%)  
+**Submitted:** 2026-08-24T16:55:41.714Z  
 
 ```cpp
-class Solution {
+class Solution {
 public:
-    int removeElement(vector<int>& nums, int val) {
-        int i = 0;
-        int j = nums.size();
-        for(int j = 0;j<nums.size();j++)
-        {
-         if (nums[j] != val) {
-                nums[i] = nums[j];
-                i++;
-            }
-        }
-        return i;
-    }
+    int removeElement(vector<int>& nums, int val) {
+        int i = 0;
+        int j = nums.size();
+        for(int j = 0;j<nums.size();j++)
+        {
+         if (nums[j] != val) {
+                nums[i] = nums[j];
+                i++;
+            }
+        }
+        return i;
+    }
 };
-
 ```
 
 ---
