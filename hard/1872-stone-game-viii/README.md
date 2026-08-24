@@ -64,28 +64,27 @@ Constraints:
 ## Solution
 
 **Language:** C++  
-**Runtime:** 0 ms  
-**Memory:** 8.2 MB  
-**Submitted:** 2026-08-24T16:26:22.949Z  
+**Runtime:** 106 ms (beats 60.76%)  
+**Memory:** 95.2 MB (beats 55.93%)  
+**Submitted:** 2026-08-24T16:26:31.270Z  
 
 ```cpp
-class Solution {
+class Solution {
 public:
-    int stoneGameVIII(vector<int>& stones) {
-        int n = stones.size();
-        vector<long long> P(n);
-        P[0] = stones[0];
-        for (int i = 1; i < n; i++)
-            P[i] = P[i - 1] + stones[i];
+    int stoneGameVIII(vector<int>& stones) {
+        int n = stones.size();
+        vector<long long> P(n);
+        P[0] = stones[0];
+        for (int i = 1; i < n; i++)
+            P[i] = P[i - 1] + stones[i];
 
-        long long dp = P[n - 1]; // best score diff if it's your turn starting at index n-1
-        for (int i = n - 2; i >= 1; i--) {
-            dp = max(dp, P[i] - dp);
-        }
-        return (int)dp;
-    }
+        long long dp = P[n - 1]; // best score diff if it's your turn starting at index n-1
+        for (int i = n - 2; i >= 1; i--) {
+            dp = max(dp, P[i] - dp);
+        }
+        return (int)dp;
+    }
 };
-
 ```
 
 ---
