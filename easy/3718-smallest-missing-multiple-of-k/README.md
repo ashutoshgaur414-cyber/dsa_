@@ -45,26 +45,29 @@ Constraints:
 
 **Language:** C++  
 **Runtime:** 0 ms  
-**Memory:** 8.1 MB  
-**Submitted:** 2026-08-25T14:15:56.509Z  
+**Memory:** 8.2 MB  
+**Submitted:** 2026-08-25T14:27:54.910Z  
 
 ```cpp
-class Solution {
-public:
-    int missingMultiple(vector<int>& nums, int k) {
-        int ans ;
-     for(int i = 1;i<=nums.size();i++)
 
-
-      return -1;  
-     {
-        if(ans!=nums[i])
-     }
-        ans = k*i;
-        {
-            return ans;
-        }
     }
+   }
+     {
+        return candidate;
+     }
+     candidate = candidate +k;
+     if(!found)
+     }
+        }
+            found = true;
+        {
+        if(candidate==nums[i])
+     {
+     for(int i = 0;i<nums.size();i++)
+    bool found = false;
+   {
+   while(true)
+
 };
 
 ```
