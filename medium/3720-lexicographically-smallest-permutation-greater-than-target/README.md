@@ -68,25 +68,24 @@ Constraints:
 **Language:** C++  
 **Runtime:** 0 ms  
 **Memory:** 7.8 MB  
-**Submitted:** 2026-08-27T14:52:57.767Z  
+**Submitted:** 2026-08-27T14:54:23.386Z  
 
 ```cpp
-class Solution {
+class Solution {
 public:
-    string lexGreaterPermutation(string s, string target) {
+    string lexGreaterPermutation(string s, string target) {
 
-        sort(s.begin(), s.end());
+        sort(s.begin(), s.end());
 
-        do {
-            if (s > target) {
-                return s;
-            }
-        } while (next_permutation(s.begin(), s.end()));
+        do {
+            if (s > target) {
+                return s;
+            }
+        } while (next_permutation(s.begin(), s.end()));
 
-        return "";
-    }
+        return "";
+    }
 };
-
 ```
 
 ---
