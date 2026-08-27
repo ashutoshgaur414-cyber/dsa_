@@ -1,15 +1,15 @@
-class Solution {
+class Solution {
 public:
-    string lexGreaterPermutation(string s, string target) {
+    string lexGreaterPermutation(string s, string target) {
 
-        sort(s.begin(), s.end());
+        sort(s.begin(), s.end());
 
-        do {
-            if (s > target) {
-                return s;
-            }
-        } while (next_permutation(s.begin(), s.end()));
+        do {
+            if (s > target) {
+                return s;
+            }
+        } while (next_permutation(s.begin(), s.end()));
 
-        return "";
-    }
+        return "";
+    }
 };
