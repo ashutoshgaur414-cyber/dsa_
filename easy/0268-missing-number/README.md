@@ -77,20 +77,30 @@ Follow up: Could you implement a solution using only O(1) extra space complexity
 ## Solution
 
 **Language:** C++  
-**Runtime:** 0 ms  
-**Memory:** 8.4 MB  
-**Submitted:** 2026-08-28T07:15:06.221Z  
+**Runtime:** 3 ms (beats 21.14%)  
+**Memory:** 22.5 MB (beats 6.59%)  
+**Submitted:** 2026-08-28T07:15:52.111Z  
 
 ```cpp
-            }
-        }
-            return -1;
-    }
-                return i;
-            {
-            if(hash[i]==0)
+class Solution {
+public:
+    int missingNumber(vector<int>& nums) {
+        int n= nums.size();
+       vector<int>hash(n+1,0);
+        for(int i = 0;i<n;i++)
+        {
+            hash[nums[i]]++;
+        }
+        for(int i = 1;i<=n;i++)
+        {
+            if(hash[i]==0)
+            {
+                return i;
+            }
+        }
+            return 0;
+    }
 };
-
 ```
 
 ---
