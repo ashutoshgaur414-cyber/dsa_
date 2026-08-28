@@ -9,29 +9,57 @@ public:
             freq[c - 'a']++;
         }
 
-        int n = s.size();
-
-        // Try to match target from left to right
-        int i;
-
-        for (i = 0; i < n; i++) {
+        // Match target from left to right
+        for (int i = 0; i < target.size(); i++) {
 
             int x = target[i] - 'a';
 
-            // Cannot match this character
+            // Cannot match target[i]
             if (freq[x] == 0) {
+
+                // Try a character greater than target[i]
+                for (int c = x + 1; c < 26; c++) {
+
+                    if (freq[c] > 0) {
+
+                        string ans = target.substr(0, i);
+
+                        ans += char('a' + c);
+
+                        freq[c]--;
+
+                        // Add remaining characters
+                        for (int j = 0; j < 26; j++) {
+                            while (freq[j] > 0) {
+                                ans += char('a' + j);
+                                freq[j]--;
+                            }
+                        }
+
+                        return ans;
+                    }
+                }
+
+                // IMPORTANT:
+                // Don't return here.
+                // We need to backtrack.
                 break;
             }
 
+            // Consume target[i]
             freq[x]--;
         }
 
-        // Case 1:
-        // We could not match target completely
-        if (i < n) {
+        // Backtrack from right to left
+        for (int i = target.size() - 1; i >= 0; i--) {
 
-            // First try to make position i greater
-            for (int c = target[i] - 'a' + 1; c < 26; c++) {
+            int x = target[i] - 'a';
+
+            // Return this character to freq
+            freq[x]++;
+
+            // Find smallest character greater than target[i]
+            for (int c = x + 1; c < 26; c++) {
 
                 if (freq[c] > 0) {
 
@@ -41,81 +69,11 @@ public:
 
                     freq[c]--;
 
-                    // Add remaining characters
+                    // Remaining characters in sorted order
                     for (int j = 0; j < 26; j++) {
                         while (freq[j] > 0) {
                             ans += char('a' + j);
                             freq[j]--;
-                        }
-                    }
-
-                    return ans;
-                }
-            }
-
-            // Now backtrack through characters
-            // that WERE actually consumed
-            for (int j = i - 1; j >= 0; j--) {
-
-                int x = target[j] - 'a';
-
-                // Return target[j]
-                freq[x]++;
-
-                // Find smallest character greater than target[j]
-                for (int c = x + 1; c < 26; c++) {
-
-                    if (freq[c] > 0) {
-
-                        string ans = target.substr(0, j);
-
-                        ans += char('a' + c);
-
-                        freq[c]--;
-
-                        // Add remaining characters
-                        for (int k = 0; k < 26; k++) {
-                            while (freq[k] > 0) {
-                                ans += char('a' + k);
-                                freq[k]--;
-                            }
-                        }
-
-                        return ans;
-                    }
-                }
-            }
-
-            return "";
-        }
-
-        // Case 2:
-        // target itself can be formed
-        // Need to find the next greater permutation
-
-        for (int j = n - 1; j >= 0; j--) {
-
-            int x = target[j] - 'a';
-
-            // Return target[j]
-            freq[x]++;
-
-            // Find smallest character greater than target[j]
-            for (int c = x + 1; c < 26; c++) {
-
-                if (freq[c] > 0) {
-
-                    string ans = target.substr(0, j);
-
-                    ans += char('a' + c);
-
-                    freq[c]--;
-
-                    // Add remaining characters
-                    for (int k = 0; k < 26; k++) {
-                        while (freq[k] > 0) {
-                            ans += char('a' + k);
-                            freq[k]--;
                         }
                     }
 
