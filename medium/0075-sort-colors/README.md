@@ -50,24 +50,55 @@ Follow up: Could you come up with a one-pass algorithm using only constant ext
 ## Solution
 
 **Language:** C++  
-**Runtime:** 0 ms  
-**Memory:** 8.1 MB  
-**Submitted:** 2026-08-30T17:35:31.629Z  
+**Runtime:** 0 ms (beats 100.00%)  
+**Memory:** 11.7 MB (beats 48.69%)  
+**Submitted:** 2026-08-30T17:35:40.089Z  
 
 ```cpp
-        {
-            nums[i]=0;
-        }
-        for(int i =0;i<count0;i++)
+class Solution {
+public:
+    void sortColors(vector<int>& nums) {
+        int count0=0;
+        int count1=0;
+        int count2=0;
+        for (int i = 0;i<nums.size();i++)
+        {
+
+            if(nums[i]==0)
+            {
+                count0++;
+            }
+            else if(nums[i]==1)
+            {
+                count1++;
+            }
+            else
+            {
+                count2++;
+            }
+
+        }
 
 
-        }
+        for(int i =0;i<count0;i++)
+        {
+            nums[i]=0;
+        }
+        for(int i =count0;i<count0+count1;i++)
+        {
+            nums[i]=1;
+        }
+        for(int i =count0+count1;i<count0+count1+count2;i++)
+        {
+            nums[i]=2;
+        }
 
-            }
-                count2++;
-        for(int i =count0;i<count0+count1;i++)
-        {
 
+
+
+
+    }
+};
 ```
 
 ---
