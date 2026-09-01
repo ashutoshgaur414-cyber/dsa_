@@ -47,32 +47,31 @@ Constraints:
 ## Solution
 
 **Language:** C++  
-**Runtime:** 0 ms  
-**Memory:** 8.4 MB  
-**Submitted:** 2026-09-01T14:25:16.063Z  
+**Runtime:** 0 ms (beats 100.00%)  
+**Memory:** 11.5 MB (beats 60.89%)  
+**Submitted:** 2026-09-01T14:25:23.953Z  
 
 ```cpp
-    vector<int> plusOne(vector<int>& digits) {
-        
-
-     for(int i = digits.size()-1;i>=0;i--)
-     return digits;
-
-     {
-        if(digits[i]<9)
-     }  
-        {
-            digits[i]++;
-        }
-    }
-            return digits;
-        digits[i]=0;
-
-     digits.insert(digits.begin(),1);
-};
+class Solution {
 public:
-class Solution {
+    vector<int> plusOne(vector<int>& digits) {
+        
 
+     for(int i = digits.size()-1;i>=0;i--)
+     {
+        if(digits[i]<9)
+        {
+            digits[i]++;
+            return digits;
+        }
+        digits[i]=0;
+     }  
+
+     digits.insert(digits.begin(),1);
+     return digits;
+
+    }
+};
 ```
 
 ---
