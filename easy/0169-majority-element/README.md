@@ -32,9 +32,9 @@ Follow-up: Could you solve the problem in linear time and in O(1) space?
 ## Solution
 
 **Language:** C++  
-**Runtime:** 2385 ms (beats 5.00%)  
-**Memory:** 28.2 MB (beats 75.68%)  
-**Submitted:** 2026-08-30T17:39:49.496Z  
+**Runtime:** 2360 ms (beats 5.00%)  
+**Memory:** 28.2 MB (beats 44.61%)  
+**Submitted:** 2026-09-01T14:41:19.511Z  
 
 ```cpp
 class Solution {
