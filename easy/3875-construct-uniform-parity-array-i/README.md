@@ -61,19 +61,18 @@ Constraints:
 ## Solution
 
 **Language:** C++  
-**Runtime:** 0 ms  
-**Memory:** 8 MB  
-**Submitted:** 2026-09-02T16:45:36.868Z  
+**Runtime:** 0 ms (beats 100.00%)  
+**Memory:** 30.5 MB (beats 7.23%)  
+**Submitted:** 2026-09-02T16:45:51.319Z  
 
 ```cpp
-class Solution {
+class Solution {
 public:
-    bool uniformArray(vector<int>& nums1) {
+    bool uniformArray(vector<int>& nums1) {
 
-             return true;
-    }
+             return true;
+    }
 };
-
 ```
 
 ---
