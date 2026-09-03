@@ -74,31 +74,30 @@ Constraints:
 ## Solution
 
 **Language:** C++  
-**Runtime:** 0 ms  
-**Memory:** 8 MB  
-**Submitted:** 2026-09-03T14:03:08.546Z  
+**Runtime:** 4 ms (beats 65.18%)  
+**Memory:** 165.9 MB (beats 62.83%)  
+**Submitted:** 2026-09-03T14:03:17.865Z  
 
 ```cpp
-class Solution {
+class Solution {
 public:
-    bool uniformArray(vector<int>& nums1) {
+    bool uniformArray(vector<int>& nums1) {
 
-        int mn = *min_element(nums1.begin(), nums1.end());
+        int mn = *min_element(nums1.begin(), nums1.end());
 
-        // If minimum is odd, we can make everything odd
-        if (mn % 2 != 0)
-            return true;
+        // If minimum is odd, we can make everything odd
+        if (mn % 2 != 0)
+            return true;
 
-        // Minimum is even, so every element must already be even
-        for (int x : nums1) {
-            if (x % 2 != 0)
-                return false;
-        }
+        // Minimum is even, so every element must already be even
+        for (int x : nums1) {
+            if (x % 2 != 0)
+                return false;
+        }
 
-        return true;
-    }
+        return true;
+    }
 };
-
 ```
 
 ---
