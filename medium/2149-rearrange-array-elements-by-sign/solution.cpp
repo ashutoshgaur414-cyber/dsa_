@@ -1,11 +1,24 @@
-     for (int i = 0;i<nums.size();i++)
-         {
-            if(nums[i]>0)
-            {
-                ans.at(pos)=nums[i];
-        int neg = 1;
-        int pos = 0;
-    vector<int> rearrangeArray(vector<int>& nums) {
+class Solution {
 public:
-class Solution {
-        vector<int>ans(nums.size());
+    vector<int> rearrangeArray(vector<int>& nums) {
+        int pos = 0;
+        int neg = 1;
+        vector<int>ans(nums.size());
+     for (int i = 0;i<nums.size();i++)
+         {
+            if(nums[i]>0)
+            {
+                ans.at(pos)=nums[i];
+                pos = pos+2;
+            }
+            else
+            {
+                ans.at(neg)=nums[i];
+                neg = neg +2;
+            }
+         }
+
+
+return ans;
+    }
+};
