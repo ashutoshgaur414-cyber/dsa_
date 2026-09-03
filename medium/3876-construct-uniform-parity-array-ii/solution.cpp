@@ -1,15 +1,17 @@
-                int oppositeMin = (parity == 0) ? minOdd : minEven;
+class Solution {
+public:
+    bool uniformArray(vector<int>& nums1) {
 
-                if (oppositeMin == INT_MAX || nums1[i] <= oppositeMin)
-                    return false;
+        int mn = *min_element(nums1.begin(), nums1.end());
 
-                // We can use nums1[i] - oppositeMin
-                // which is positive and odd.
-                if (parity == 0)
-                    minEven = min(minEven, nums1[i]);
-                else
-                    minOdd = min(minOdd, nums1[i]);
-            }
+        // If minimum is odd, we can make everything odd
+        if (mn % 2 != 0)
+            return true;
+
+        // Minimum is even, so every element must already be even
+        for (int x : nums1) {
+            if (x % 2 != 0)
+                return false;
         }
 
         return true;
