@@ -78,26 +78,42 @@ Constraints:
 ## Solution
 
 **Language:** C++  
-**Runtime:** 0 ms  
-**Memory:** 8.3 MB  
-**Submitted:** 2026-09-04T14:27:30.423Z  
+**Runtime:** 6 ms (beats 5.31%)  
+**Memory:** 31 MB (beats 66.39%)  
+**Submitted:** 2026-09-04T14:27:35.948Z  
 
 ```cpp
-    int firstStableIndex(vector<int>& nums, int k) {
-        int n = nums.size();
+class Solution {
+public:
+    int firstStableIndex(vector<int>& nums, int k) {
+        int n = nums.size();
 
-        // suffixMin[i] = minimum element from i to n-1
-        vector<int> suffixMin(n);
+        // suffixMin[i] = minimum element from i to n-1
+        vector<int> suffixMin(n);
 
-        suffixMin[n - 1] = nums[n - 1];
+        suffixMin[n - 1] = nums[n - 1];
 
-        for (int i = n - 2; i >= 0; i--) {
-            suffixMin[i] = min(nums[i], suffixMin[i + 1]);
-        }
+        for (int i = n - 2; i >= 0; i--) {
+            suffixMin[i] = min(nums[i], suffixMin[i + 1]);
+        }
 
-        // Maximum from nums[0] to nums[i]
-        int prefixMax = nums[0];
+        // Maximum from nums[0] to nums[i]
+        int prefixMax = nums[0];
 
+        for (int i = 0; i < n; i++) {
+
+            prefixMax = max(prefixMax, nums[i]);
+
+            int instability = prefixMax - suffixMin[i];
+
+            if (instability <= k) {
+                return i;
+            }
+        }
+
+        return -1;
+    }
+};
 ```
 
 ---
