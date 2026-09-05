@@ -47,31 +47,30 @@ Constraints:
 ## Solution
 
 **Language:** C++  
-**Runtime:** 0 ms  
-**Memory:** 8.5 MB  
-**Submitted:** 2026-09-05T13:20:36.845Z  
+**Runtime:** 0 ms (beats 100.00%)  
+**Memory:** 12.7 MB (beats 35.43%)  
+**Submitted:** 2026-09-05T13:20:43.024Z  
 
 ```cpp
-         }
-            }
-                val = val^1;
-            {
-            for(auto& val : row)
-         {
-            reverse(row.begin(),row.end());
-        
-         for(auto& row :image)
-    vector<vector<int>> flipAndInvertImage(vector<vector<int>>& image) {
+class Solution {
 public:
-class Solution {
+    vector<vector<int>> flipAndInvertImage(vector<vector<int>>& image) {
+        
+         for(auto& row :image)
+         {
+            reverse(row.begin(),row.end());
+            for(auto& val : row)
+            {
+                val = val^1;
+            }
+         }
 
 
-return image ;
+return image ;
 
 
-    }
+    }
 };
-
 ```
 
 ---
