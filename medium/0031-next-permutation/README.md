@@ -51,18 +51,17 @@ Constraints:
 ## Solution
 
 **Language:** C++  
-**Runtime:** 0 ms  
-**Memory:** 8.2 MB  
-**Submitted:** 2026-09-05T13:45:55.232Z  
+**Runtime:** 0 ms (beats 100.00%)  
+**Memory:** 15.8 MB (beats 15.00%)  
+**Submitted:** 2026-09-05T13:46:00.507Z  
 
 ```cpp
-class Solution {
+class Solution {
 public:
-    void nextPermutation(vector<int>& nums) {
-        next_permutation(nums.begin(),nums.end());
-    }
+    void nextPermutation(vector<int>& nums) {
+        next_permutation(nums.begin(),nums.end());
+    }
 };
-
 ```
 
 ---
