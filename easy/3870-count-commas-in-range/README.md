@@ -49,24 +49,23 @@ Constraints:
 ## Solution
 
 **Language:** C++  
-**Runtime:** 0 ms  
-**Memory:** 7.7 MB  
-**Submitted:** 2026-09-08T13:50:34.497Z  
+**Runtime:** 0 ms (beats 100.00%)  
+**Memory:** 8.6 MB (beats 51.38%)  
+**Submitted:** 2026-09-08T13:50:41.365Z  
 
 ```cpp
-class Solution {
+class Solution {
 public:
-    int countCommas(int n) {
-        if(n<1000)
-        {
-           return 0;
-        }
-        int y = n-999;
-    }
-    
-        return y;
+    int countCommas(int n) {
+        if(n<1000)
+        {
+           return 0;
+        }
+        int y = n-999;
+        return y;
+    }
+    
 };
-
 ```
 
 ---
