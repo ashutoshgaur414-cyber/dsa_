@@ -41,28 +41,31 @@ Constraints:
 
 **Language:** C++  
 **Runtime:** 0 ms  
-**Memory:** 7.9 MB  
-**Submitted:** 2026-09-11T15:42:50.403Z  
+**Memory:** 8.2 MB  
+**Submitted:** 2026-09-11T15:46:33.326Z  
 
 ```cpp
-            hash[arr[i]]++;
-        }
-        for(int i =1;i<=n;i++)
-        {
-            if(i==hash[i])
-            {
-               luckynum = hash[i];
-        {
-        for(int i =0;i<n;i++)
-        vector<int>hash(n+1,0);
-            
-            }
-        }
-        return luckynum;
-        int luckynum=-1;
-        int n = arr.size();
-    int findLucky(vector<int>& arr) {
-
+class Solution {
+public:
+    int findLucky(vector<int>& arr) {
+        int n = arr.size();
+        int luckynum=-1;
+        vector<int>hash(n+1,0);
+        for(int i =0;i<n;i++)
+        {
+            hash[arr[i]]++;
+        }
+        for(int i =1;i<=n;i++)
+        {
+            if(i==hash[i])
+            {
+               luckynum = hash[i];
+            
+            }
+        }
+        return luckynum;
+    }
+};
 ```
 
 ---
