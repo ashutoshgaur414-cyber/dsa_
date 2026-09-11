@@ -43,21 +43,22 @@ Follow-up: Can you solve it without using an extra space (i.e., O(1) memory)?
 
 **Language:** C++  
 **Runtime:** 0 ms  
-**Memory:** 8.1 MB  
-**Submitted:** 2026-09-11T16:00:49.505Z  
+**Memory:** 8.2 MB  
+**Submitted:** 2026-09-11T16:03:09.081Z  
 
 ```cpp
-public:
     vector<int> buildArray(vector<int>& nums) {
         for(int i =0;i<n;i++)
         {
-            ans.push_back(nums[nums[i]]);
+            ans[i]=nums[nums[i]];
         }
         return ans;
     }
         vector<int>ans(n);
         int n = nums.size();
 };
+public:
+class Solution {
 
 ```
 
