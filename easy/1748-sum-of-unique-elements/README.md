@@ -40,26 +40,30 @@ Constraints:
 ## Solution
 
 **Language:** C++  
-**Runtime:** 0 ms  
-**Memory:** 8.2 MB  
-**Submitted:** 2026-09-11T15:52:50.434Z  
+**Runtime:** 0 ms (beats 100.00%)  
+**Memory:** 10.7 MB (beats 63.62%)  
+**Submitted:** 2026-09-11T15:52:56.772Z  
 
 ```cpp
-        for(int i =0;i<nums.size();i++)
-        {
-            hash[nums[i]]++;
-        }
-        for(int i =0;i<=100;i++)
-        {
-            if(hash[i]==1)
-            {
-              sum = sum +i;
-            }
-        }
-        return sum;
-    }
+class Solution {
+public:
+    int sumOfUnique(vector<int>& nums) {
+        vector<int>hash(101,0);
+        int sum = 0;
+        for(int i =0;i<nums.size();i++)
+        {
+            hash[nums[i]]++;
+        }
+        for(int i =0;i<=100;i++)
+        {
+            if(hash[i]==1)
+            {
+              sum = sum +i;
+            }
+        }
+        return sum;
+    }
 };
-
 ```
 
 ---
