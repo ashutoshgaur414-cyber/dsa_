@@ -40,9 +40,9 @@ Constraints:
 ## Solution
 
 **Language:** C++  
-**Runtime:** 0 ms  
-**Memory:** 8.2 MB  
-**Submitted:** 2026-09-11T15:46:33.326Z  
+**Runtime:** 0 ms (beats 100.00%)  
+**Memory:** 14 MB (beats 81.52%)  
+**Submitted:** 2026-09-11T15:46:39.558Z  
 
 ```cpp
 class Solution {
@@ -50,12 +50,12 @@ public:
     int findLucky(vector<int>& arr) {
         int n = arr.size();
         int luckynum=-1;
-        vector<int>hash(n+1,0);
+        vector<int>hash(501,0);
         for(int i =0;i<n;i++)
         {
             hash[arr[i]]++;
         }
-        for(int i =1;i<=n;i++)
+        for(int i =1;i<=500;i++)
         {
             if(i==hash[i])
             {
