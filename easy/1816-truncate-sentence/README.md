@@ -51,21 +51,20 @@ Constraints:
 ## Solution
 
 **Language:** C++  
-**Runtime:** 0 ms  
-**Memory:** 7.9 MB  
-**Submitted:** 2026-09-12T16:24:46.564Z  
+**Runtime:** 0 ms (beats 100.00%)  
+**Memory:** 9.1 MB (beats 16.42%)  
+**Submitted:** 2026-09-12T16:28:22.877Z  
 
 ```cpp
-class Solution {
+class Solution {
 public:
-    string truncateSentence(string s, int k) {
-       for (int i = 0; i < s.size(); ++i)
-        if (s[i] == ' ' && --k == 0)
-            return s.substr(0, i);
-                  return s;  
-    }
+    string truncateSentence(string s, int k) {
+       for (int i = 0; i < s.size(); ++i)
+        if (s[i] == ' ' && --k == 0)
+            return s.substr(0, i);
+                  return s;  
+    }
 };
-
 ```
 
 ---
