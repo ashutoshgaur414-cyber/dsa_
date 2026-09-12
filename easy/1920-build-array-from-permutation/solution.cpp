@@ -1,12 +1,12 @@
-    vector<int> buildArray(vector<int>& nums) {
-        for(int i =0;i<n;i++)
-        {
-            ans[i]=nums[nums[i]];
-        }
-        return ans;
-    }
-        vector<int>ans(n);
-        int n = nums.size();
-};
+class Solution {
 public:
-class Solution {
+    vector<int> buildArray(vector<int>& nums) {
+        int n = nums.size();
+        vector<int>ans(n);
+        for(int i =0;i<n;i++)
+        {
+            ans[i]=nums[nums[i]];
+        }
+        return ans;
+    }
+};
