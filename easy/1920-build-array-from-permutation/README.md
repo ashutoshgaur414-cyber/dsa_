@@ -42,24 +42,23 @@ Follow-up: Can you solve it without using an extra space (i.e., O(1) memory)?
 ## Solution
 
 **Language:** C++  
-**Runtime:** 0 ms  
-**Memory:** 8.2 MB  
-**Submitted:** 2026-09-11T16:03:09.081Z  
+**Runtime:** 0 ms (beats 100.00%)  
+**Memory:** 20.3 MB (beats 83.09%)  
+**Submitted:** 2026-09-11T16:03:13.820Z  
 
 ```cpp
-    vector<int> buildArray(vector<int>& nums) {
-        for(int i =0;i<n;i++)
-        {
-            ans[i]=nums[nums[i]];
-        }
-        return ans;
-    }
-        vector<int>ans(n);
-        int n = nums.size();
-};
+class Solution {
 public:
-class Solution {
-
+    vector<int> buildArray(vector<int>& nums) {
+        int n = nums.size();
+        vector<int>ans(n);
+        for(int i =0;i<n;i++)
+        {
+            ans[i]=nums[nums[i]];
+        }
+        return ans;
+    }
+};
 ```
 
 ---
