@@ -48,26 +48,43 @@ Constraints:
 ## Solution
 
 **Language:** C++  
-**Runtime:** 0 ms  
-**Memory:** 8.6 MB  
-**Submitted:** 2026-09-13T09:48:02.756Z  
+**Runtime:** 35 ms (beats 84.53%)  
+**Memory:** 15.6 MB (beats 44.39%)  
+**Submitted:** 2026-09-13T09:48:10.337Z  
 
 ```cpp
-        for (auto& a : onesA) {
-            for (auto& b : onesB) {
-                int dx = a.first - b.first;
-                int dy = a.second - b.second;
-                int key = dx * 200 + dy; // encode (dx, dy) into 
-                a single key
-                count[key]++;
-                maxOverlap = max(maxOverlap, count[key]);
-            }
-        }
-        
-        return maxOverlap;
-    }
+class Solution {
+public:
+    int largestOverlap(vector<vector<int>>& img1, vector<vector<int>>& img2) {
+        int n = img1.size();
+        vector<pair<int,int>> onesA, onesB;
+        
+        // Collect coordinates of 1s in both images
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                if (img1[i][j] == 1) onesA.push_back({i, j});
+                if (img2[i][j] == 1) onesB.push_back({i, j});
+            }
+        }
+        
+        // For every pair of 1s (one from each image), compute the shift
+        // needed to align them, and count how often each shift occurs.
+        unordered_map<int, int> count;
+        int maxOverlap = 0;
+        
+        for (auto& a : onesA) {
+            for (auto& b : onesB) {
+                int dx = a.first - b.first;
+                int dy = a.second - b.second;
+                int key = dx * 200 + dy; // encode (dx, dy) into a single key
+                count[key]++;
+                maxOverlap = max(maxOverlap, count[key]);
+            }
+        }
+        
+        return maxOverlap;
+    }
 };
-
 ```
 
 ---
